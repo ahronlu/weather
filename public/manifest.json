@@ -1,0 +1,20 @@
+{
+  "short_name": "Herolo Weather Task",
+  "name": "Herolo Weather Task",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
