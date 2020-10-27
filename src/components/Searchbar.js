@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Search, Label } from "semantic-ui-react";
 import { autocomplete } from "../services/services";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { getCityForecast } from "../actions/cityForecastActions";
 
 function Searchbar() {
@@ -23,8 +23,8 @@ function Searchbar() {
               title: item.Key,
             }))
         );
-      } catch (err) {
-        toast(err.message);
+      } catch (error) {
+        toast(error.message);
       }
       setLoading(false);
     };
@@ -50,7 +50,6 @@ function Searchbar() {
         results={cityOptions && cityOptions}
         value={value}
       />
-      <ToastContainer />
     </>
   );
 }

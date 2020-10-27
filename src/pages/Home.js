@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Container, Grid, Segment, Image, GridRow } from "semantic-ui-react";
-import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import AddToFavorites from "../components/AddToFavorites";
 import Searchbar from "../components/Searchbar";
 import Forecast from "../components/Forecast";
@@ -9,7 +9,11 @@ import Forecast from "../components/Forecast";
 const Home = () => {
   const cityForecast = useSelector((state) => state.cityForecast);
   const { darkMode, isCel } = useSelector((state) => state.theme);
-  const { name, loading, currentCondition } = cityForecast;
+  const { name, loading, currentCondition, error } = cityForecast;
+
+  useEffect(() => {
+    toast(error);
+  }, [error]);
 
   return (
     <Container textAlign="center">
@@ -46,7 +50,6 @@ const Home = () => {
           </>
         )}
       </Segment>
-      <ToastContainer />
     </Container>
   );
 };

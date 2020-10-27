@@ -29,11 +29,15 @@ const Navbar = () => {
 
   return (
     <Menu borderless inverted={darkMode}>
-      <Menu.Item className="computer only">Herolo Weather</Menu.Item>
-      <Menu.Item onClick={toggleDarkLight}>
+      <Menu.Item as={Link} to="/" title="Home">
+        Herolo Weather
+      </Menu.Item>
+      <Menu.Item onClick={toggleDarkLight} title="Dark/Light Mode">
         <Icon name={darkMode ? `sun` : `moon`} />
       </Menu.Item>
-      <Menu.Item onClick={toggleCelFar}>{isCel ? `C` : `F`}°</Menu.Item>
+      <Menu.Item onClick={toggleCelFar} title="C°/F°">
+        {isCel ? `C` : `F`}°
+      </Menu.Item>
       <Menu.Item as={Link} to="/" active={isHome} position="right" title="Home">
         <Icon name="home" />
       </Menu.Item>

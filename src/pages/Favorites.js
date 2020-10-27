@@ -10,21 +10,21 @@ const Favorites = ({ history }) => {
   const { favorites } = useSelector((state) => state.favorites);
   const { darkMode } = useSelector((state) => state.theme);
 
-  const loadCity = (city) => {
-    dispatch(getCityForecast(city.key, city.name));
+  const loadCity = (key, name) => {
+    dispatch(getCityForecast(key, name));
     history.push("/");
   };
 
   return (
     <Container textAlign="center">
-      {favorites.length ? (
+      {favorites && favorites.length ? (
         <Card.Group stackable itemsPerRow={5}>
-          {favorites.map((city, i) => (
+          {favorites.map((city) => (
             <FavoriteCityItem
               loadCity={loadCity}
               cityKey={city.key}
-              name={city.name}
-              key={i}
+              cityName={city.name}
+              key={city.key}
             />
           ))}
         </Card.Group>
