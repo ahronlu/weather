@@ -2,10 +2,10 @@ const axios = require("axios").default;
 const apikey = process.env.REACT_APP_API_KEY;
 const baseUrl = "https://dataservice.accuweather.com/";
 
-export async function getLocations(locationString) {
+export async function autocomplete(locationKey) {
   try {
     const { data } = await axios(
-      `${baseUrl}locations/v1/cities/autocomplete?apikey=${apikey}&q=${locationString}`
+      `${baseUrl}locations/v1/cities/autocomplete?apikey=${apikey}&q=${locationKey}`
     );
     return data;
   } catch (err) {
@@ -38,7 +38,6 @@ export async function getFiveDayWeather(locationKey) {
 export async function getCurrentLocation() {
   try {
     const location = await getUserLocation();
-    console.log(location);
     const { coords } = location;
     if (!coords) return;
     const { data } = await axios(

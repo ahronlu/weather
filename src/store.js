@@ -11,7 +11,13 @@ const reducer = combineReducers({
   theme: themeReducer,
 });
 
-const initialState = {};
+const favoritesFromStorage = localStorage.getItem("favorites")
+  ? JSON.parse(localStorage.getItem("favorites"))
+  : [];
+
+const initialState = {
+  favorites: favoritesFromStorage,
+};
 
 const middleware = [thunk];
 

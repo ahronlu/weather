@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Search, Label } from "semantic-ui-react";
-import { getLocations } from "../services/services";
+import { autocomplete } from "../services/services";
 import { toast, ToastContainer } from "react-toastify";
 import { getCityForecast } from "../actions/cityForecastActions";
 
@@ -15,7 +15,7 @@ function Searchbar() {
     const getCities = async () => {
       setLoading(true);
       try {
-        const data = await getLocations(value);
+        const data = await autocomplete(value);
         setCityOptions(
           data &&
             data.map((item) => ({

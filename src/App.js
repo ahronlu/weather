@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className={darkMode && `app-inverted`}>
+      <div className={darkMode ? "app-inverse" : ""}>
         <Navbar />
         <Switch>
           <Route path={URLS.favorites} component={Favorites} />

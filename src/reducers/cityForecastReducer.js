@@ -5,7 +5,7 @@ import {
 } from "../constants/cityForecastConstants";
 
 export const cityForecastReducer = (
-  state = { loading: true, days: [], name: "", key: "" },
+  state = { loading: true, days: [], name: "", key: "", currentCondition: [] },
   action
 ) => {
   switch (action.type) {
@@ -20,6 +20,7 @@ export const cityForecastReducer = (
         days: action.payload.days,
         key: action.payload.key,
         name: action.payload.name,
+        currentCondition: action.payload.currentCondition,
       };
     case CITY_FORECAST_FAIL:
       return {

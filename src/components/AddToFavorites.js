@@ -10,12 +10,12 @@ const AddToFavorites = () => {
   const dispatch = useDispatch();
   const [selectedCity, setSelectedCity] = useState({});
 
-  const { days, name, key } = useSelector((state) => state.cityForecast);
+  const { name, key } = useSelector((state) => state.cityForecast);
   const { favorites } = useSelector((state) => state.favorites);
 
   useEffect(() => {
-    setSelectedCity({ name, days, key });
-  }, [name, days, key]);
+    setSelectedCity({ name, key });
+  }, [name, key]);
 
   const isFav =
     favorites && favorites.some((fav) => fav.key === selectedCity.key);

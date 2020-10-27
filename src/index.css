@@ -13,13 +13,22 @@ body {
 
 /* Inverted UI */
 
-.app-inverted {
+.app-inverse {
   background-color: black;
   color: rgba(255, 255, 255, 0.9);
   height: 100vh;
 }
 
-.inverted {
+.inverse {
   background: #1b1c1d !important;
   color: rgba(255, 255, 255, 0.9) !important;
+}
+
+span,
+.cardcontent {
+  margin: 25px;
+}
+
+.medium {
+  margin: 0 auto;
 }

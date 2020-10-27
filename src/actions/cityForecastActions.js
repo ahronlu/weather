@@ -3,14 +3,15 @@ import {
   CITY_FORECAST_SUCCESS,
   CITY_FORECAST_FAIL,
 } from "../constants/cityForecastConstants";
-import { getFiveDayWeather } from "../services/services";
+import { getCurrentCondition, getFiveDayWeather } from "../services/services";
 
 export const getCityForecast = (key, name) => async (dispatch) => {
   try {
     dispatch({ type: CITY_FORECAST_REQUEST });
 
     const days = await getFiveDayWeather(key);
-    const data = { days, key, name };
+    const currentCondition = await getCurrentCondition(key);
+    const data = { days, key, name, currentCondition };
 
     dispatch({
       type: CITY_FORECAST_SUCCESS,
