@@ -1,5 +1,7 @@
+import { toast } from "react-toastify";
+
 const axios = require("axios").default;
-const apikey = process.env.REACT_APP_API_KEY;
+const apikey = "REj5H9KBMv0Mk0pjsnwEYV9AO9JYcs5N";
 const baseUrl = "https://dataservice.accuweather.com/";
 
 export async function autocomplete(locationKey) {
@@ -54,6 +56,9 @@ const getUserLocation = () =>
   new Promise((resolve) => {
     navigator.geolocation.getCurrentPosition(
       (location) => resolve(location),
-      (error) => resolve(error)
+      (error) => {
+        resolve(error);
+        toast("Geolocation Error: " + error.message);
+      }
     );
   });

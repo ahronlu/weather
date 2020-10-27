@@ -19,7 +19,8 @@ body {
   height: 100vh;
 }
 
-.inverse {
+.inverse,
+.inverse-search input {
   background: #1b1c1d !important;
   color: rgba(255, 255, 255, 0.9) !important;
 }

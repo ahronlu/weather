@@ -7,12 +7,13 @@ import Searchbar from "../components/Searchbar";
 import Forecast from "../components/Forecast";
 
 const Home = () => {
-  const cityForecast = useSelector((state) => state.cityForecast);
+  const { name, loading, currentCondition, error } = useSelector(
+    (state) => state.cityForecast
+  );
   const { darkMode, isCel } = useSelector((state) => state.theme);
-  const { name, loading, currentCondition, error } = cityForecast;
 
   useEffect(() => {
-    toast(error);
+    error && toast("City Forecast Error: " + error);
   }, [error]);
 
   return (

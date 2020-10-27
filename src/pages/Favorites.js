@@ -10,8 +10,8 @@ const Favorites = ({ history }) => {
   const { favorites } = useSelector((state) => state.favorites);
   const { darkMode } = useSelector((state) => state.theme);
 
-  const loadCity = (key, name) => {
-    dispatch(getCityForecast(key, name));
+  const loadCity = (city) => {
+    dispatch(getCityForecast(city.key, city.name));
     history.push("/");
   };
 
@@ -22,8 +22,7 @@ const Favorites = ({ history }) => {
           {favorites.map((city) => (
             <FavoriteCityItem
               loadCity={loadCity}
-              cityKey={city.key}
-              cityName={city.name}
+              favCity={city}
               key={city.key}
             />
           ))}

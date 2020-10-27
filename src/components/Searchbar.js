@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Search, Label } from "semantic-ui-react";
 import { autocomplete } from "../services/services";
 import { toast } from "react-toastify";
@@ -10,6 +10,8 @@ function Searchbar() {
   const [cityOptions, setCityOptions] = useState([]);
   const [value, setValue] = useState();
   const [isLoading, setLoading] = useState(false);
+
+  const { darkMode } = useSelector((state) => state.theme);
 
   useEffect(() => {
     const getCities = async () => {
@@ -24,7 +26,7 @@ function Searchbar() {
             }))
         );
       } catch (error) {
-        toast(error.message);
+        toast("Autocomplete Error: " + error.message);
       }
       setLoading(false);
     };
@@ -49,6 +51,7 @@ function Searchbar() {
         resultRenderer={resultRenderer}
         results={cityOptions && cityOptions}
         value={value}
+        className={darkMode ? "inverse-search" : ""}
       />
     </>
   );

@@ -13,7 +13,7 @@ const reducer = combineReducers({
 
 const favoritesFromStorage = localStorage.getItem("favorites")
   ? JSON.parse(localStorage.getItem("favorites"))
-  : [];
+  : { favorites: [] };
 
 const themeFromStorage = localStorage.getItem("theme")
   ? JSON.parse(localStorage.getItem("theme"))
