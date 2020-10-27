@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const apikey = process.env.REACT_APP_API_KEY;
+const apikey = "fy9gpQ6A2q6F6pAUXLOs6HY6kQaFO6Jn";
 const baseUrl = "https://dataservice.accuweather.com/";
 
 export async function autocomplete(locationKey) {
