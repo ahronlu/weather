@@ -15,8 +15,13 @@ const favoritesFromStorage = localStorage.getItem("favorites")
   ? JSON.parse(localStorage.getItem("favorites"))
   : [];
 
+const themeFromStorage = localStorage.getItem("theme")
+  ? JSON.parse(localStorage.getItem("theme"))
+  : [];
+
 const initialState = {
   favorites: favoritesFromStorage,
+  theme: themeFromStorage,
 };
 
 const middleware = [thunk];

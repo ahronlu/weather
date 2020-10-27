@@ -29,16 +29,16 @@ const Navbar = () => {
 
   return (
     <Menu borderless inverted={darkMode}>
-      <Menu.Item>Herolo Weather</Menu.Item>
+      <Menu.Item className="computer only">Herolo Weather</Menu.Item>
       <Menu.Item onClick={toggleDarkLight}>
         <Icon name={darkMode ? `sun` : `moon`} />
       </Menu.Item>
-      <Menu.Item onClick={toggleCelFar}>{isCel ? `C` : `F`}</Menu.Item>
-      <Menu.Item as={Link} to="/" active={isHome} position="right">
-        Home
+      <Menu.Item onClick={toggleCelFar}>{isCel ? `C` : `F`}°</Menu.Item>
+      <Menu.Item as={Link} to="/" active={isHome} position="right" title="Home">
+        <Icon name="home" />
       </Menu.Item>
-      <Menu.Item as={Link} to="/favorites" active={!isHome}>
-        Favorites
+      <Menu.Item as={Link} to="/favorites" active={!isHome} title="Favorites">
+        <Icon name="favorite" />
       </Menu.Item>
     </Menu>
   );
