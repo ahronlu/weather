@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import Header from "./components/Header";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
@@ -16,11 +16,16 @@ const App = () => {
 
   useEffect(() => {
     const getUserForecast = async () => {
-      const data = await getCurrentLocation();
-      if (data) {
-        dispatch(getCityForecast(data.Key, data.LocalizedName));
-      } else {
-        dispatch(getCityForecast(215854, "Tel Aviv"));
+      try {
+        const data = await getCurrentLocation();
+        console.log(data);
+        if (data) {
+          dispatch(getCityForecast(data.Key, data.LocalizedName));
+        } else {
+          dispatch(getCityForecast(215854, "Tel Aviv"));
+        }
+      } catch (error) {
+        toast.error("GeoPosition " + error.message);
       }
     };
     getUserForecast();

@@ -45,7 +45,6 @@ export async function getCurrentLocation() {
     const { data } = await axios(
       `${baseUrl}locations/v1/cities/geoposition/search?apikey=${apikey}&q=${coords.latitude},${coords.longitude}`
     );
-
     return data;
   } catch (err) {
     throw new Error(err);
@@ -58,7 +57,7 @@ const getUserLocation = () =>
       (location) => resolve(location),
       (error) => {
         resolve(error);
-        toast.error("Geolocation Error: " + error.message);
+        toast.error("Current Position Error: " + error.message);
       }
     );
   });
