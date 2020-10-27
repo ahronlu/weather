@@ -16,7 +16,7 @@ const AddToFavorites = () => {
   useEffect(() => {
     setSelectedCity({ name, key });
   }, [name, key]);
-  console.log(favorites);
+
   const isFav =
     favorites && favorites.some((fav) => fav.key === selectedCity.key);
 
