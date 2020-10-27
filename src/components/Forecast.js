@@ -36,15 +36,15 @@ const Forecast = () => {
               <Image size="tiny" src={`icons/${day.Night.Icon}.svg`} />
               <span>
                 {!isFar
-                  ? day.Temperature.Maximum.Value.toFixed(0)
-                  : (day.Temperature.Maximum.Value * 1.8 + 32).toFixed(0)}
-                °
+                  ? day.Temperature.Maximum.Value.toFixed(0) + "°C"
+                  : (day.Temperature.Maximum.Value * 1.8 + 32).toFixed(0) +
+                    "°F"}
               </span>
               <span>
                 {!isFar
-                  ? day.Temperature.Minimum.Value.toFixed(0)
-                  : (day.Temperature.Minimum.Value * 1.8 + 32).toFixed(0)}
-                °
+                  ? day.Temperature.Minimum.Value.toFixed(0) + "°C"
+                  : (day.Temperature.Minimum.Value * 1.8 + 32).toFixed(0) +
+                    "°F"}
               </span>
             </Card.Content>
           </Card>

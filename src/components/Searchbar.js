@@ -50,6 +50,7 @@ function Searchbar() {
         resultRenderer={resultRenderer}
         results={cityOptions && cityOptions}
         value={value}
+        placeholder=""
         className={darkMode ? "inverse-search" : ""}
       />
     </>

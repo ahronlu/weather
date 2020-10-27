@@ -48,9 +48,8 @@ const FavoriteCityItem = ({ favCity, loadCity }) => {
             <h3>{city[0].WeatherText}</h3>
             <span>
               {!isFar
-                ? city[0].Temperature.Metric.Value.toFixed(0)
-                : city[0].Temperature.Imperial.Value.toFixed(0)}
-              °
+                ? city[0].Temperature.Metric.Value.toFixed(0) + "°C"
+                : city[0].Temperature.Imperial.Value.toFixed(0) + "°F"}
             </span>
           </Card.Description>
         </Card.Content>

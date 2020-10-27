@@ -28,11 +28,12 @@ const Home = () => {
                   <h3>{name}</h3>
                   <h3>
                     {!isFar
-                      ? currentCondition[0].Temperature.Metric.Value.toFixed(0)
+                      ? currentCondition[0].Temperature.Metric.Value.toFixed(
+                          0
+                        ) + "°C"
                       : currentCondition[0].Temperature.Imperial.Value.toFixed(
                           0
-                        )}
-                    °
+                        ) + "°F"}
                   </h3>
                 </Grid.Column>
                 <Grid.Column textAlign="right">
