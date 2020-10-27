@@ -13,7 +13,7 @@ const Home = () => {
   const { darkMode, isFar } = useSelector((state) => state.theme);
 
   useEffect(() => {
-    error && toast("City Forecast Error: " + error);
+    error && toast.error("City Forecast Error: " + error);
   }, [error]);
 
   return (

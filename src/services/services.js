@@ -58,7 +58,7 @@ const getUserLocation = () =>
       (location) => resolve(location),
       (error) => {
         resolve(error);
-        toast(error.message);
+        toast.error("Geolocation Error: " + error.message);
       }
     );
   });

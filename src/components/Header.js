@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Icon, Menu } from "semantic-ui-react";
 import { toggleDarkMode, toggleTempValue } from "../actions/themeActions";
 
-const Navbar = () => {
+const Header = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   const [isHome, setIsHome] = useState(true);
@@ -35,8 +35,8 @@ const Navbar = () => {
       <Menu.Item onClick={toggleDarkLight} title="Dark/Light Mode">
         <Icon name={darkMode ? `sun` : `moon`} />
       </Menu.Item>
-      <Menu.Item onClick={toggleCelFar} title="C°/F°">
-        {isFar ? `F` : `C`}°
+      <Menu.Item onClick={toggleCelFar} title="°C/°F">
+        °{isFar ? `F` : `C`}
       </Menu.Item>
       <Menu.Item as={Link} to="/" active={isHome} position="right" title="Home">
         <Icon name="home" />
@@ -48,4 +48,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

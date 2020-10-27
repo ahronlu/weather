@@ -16,7 +16,7 @@ const FavoriteCityItem = ({ favCity, loadCity }) => {
         const data = await getCurrentCondition(favCity.key);
         setCity(data);
       } catch (error) {
-        toast("City Current Conditions Error: " + error.message);
+        toast.error("City Current Conditions Error: " + error.message);
       }
     };
     getCityDetails();

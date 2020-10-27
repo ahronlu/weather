@@ -26,7 +26,7 @@ function Searchbar() {
             }))
         );
       } catch (error) {
-        toast("Autocomplete Error: " + error.message);
+        toast.error("Autocomplete Error: " + error.message);
       }
       setLoading(false);
     };
