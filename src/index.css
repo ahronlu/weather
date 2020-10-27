@@ -27,7 +27,7 @@ body {
 }
 
 .inverse-search input,
-.inverse-search div {
+.inverse-search div div {
   background: gray !important;
   color: rgba(255, 255, 255, 0.9) !important;
 }
