@@ -8,7 +8,7 @@ import { getCityForecast } from "../actions/cityForecastActions";
 function Searchbar() {
   const dispatch = useDispatch();
   const [cityOptions, setCityOptions] = useState([]);
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
   const [isLoading, setLoading] = useState(false);
 
   const { darkMode } = useSelector((state) => state.theme);
@@ -30,8 +30,7 @@ function Searchbar() {
       }
       setLoading(false);
     };
-
-    getCities();
+    if (value) getCities();
   }, [value]);
 
   const selectCity = (data) => {
