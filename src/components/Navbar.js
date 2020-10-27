@@ -9,7 +9,7 @@ const Navbar = () => {
   const { pathname } = useLocation();
   const [isHome, setIsHome] = useState(true);
 
-  const { darkMode, isCel } = useSelector((state) => state.theme);
+  const { darkMode, isFar } = useSelector((state) => state.theme);
 
   useEffect(() => {
     if (pathname.includes("favorites")) {
@@ -36,7 +36,7 @@ const Navbar = () => {
         <Icon name={darkMode ? `sun` : `moon`} />
       </Menu.Item>
       <Menu.Item onClick={toggleCelFar} title="C°/F°">
-        {isCel ? `C` : `F`}°
+        {isFar ? `F` : `C`}°
       </Menu.Item>
       <Menu.Item as={Link} to="/" active={isHome} position="right" title="Home">
         <Icon name="home" />

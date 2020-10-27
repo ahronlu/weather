@@ -4,7 +4,7 @@ import {
 } from "../constants/themeConstants";
 
 export const themeReducer = (
-  state = { darkMode: false, isCel: true },
+  state = { darkMode: false, isFar: false },
   action
 ) => {
   switch (action.type) {
@@ -16,7 +16,7 @@ export const themeReducer = (
     case TOGGLE_TEMP_VALUE:
       return {
         ...state,
-        isCel: !state.isCel,
+        isFar: !state.isFar,
       };
     default:
       return state;

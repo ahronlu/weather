@@ -7,7 +7,7 @@ import { removeFromFavorites } from "../actions/favoritesActions";
 
 const FavoriteCityItem = ({ favCity, loadCity }) => {
   const dispatch = useDispatch();
-  const { darkMode, isCel } = useSelector((state) => state.theme);
+  const { darkMode, isFar } = useSelector((state) => state.theme);
   const [city, setCity] = useState([]);
 
   useEffect(() => {
@@ -39,13 +39,19 @@ const FavoriteCityItem = ({ favCity, loadCity }) => {
             {favCity.name}{" "}
             <Icon color="red" name="trash" onClick={removeFavorite} />
           </Card.Header>
-          <Image src={`icons/${city[0].WeatherIcon}-s.png`} wrapped />
+          <Image
+            size="small"
+            src={`icons/${city[0].WeatherIcon}.svg`}
+            wrapped
+          />
           <Card.Description className={darkMode ? "inverse" : ""}>
             <h3>{city[0].WeatherText}</h3>
-            {isCel
-              ? city[0].Temperature.Metric.Value.toFixed(0)
-              : city[0].Temperature.Imperial.Value.toFixed(0)}
-            °
+            <span>
+              {!isFar
+                ? city[0].Temperature.Metric.Value.toFixed(0)
+                : city[0].Temperature.Imperial.Value.toFixed(0)}
+              °
+            </span>
           </Card.Description>
         </Card.Content>
       )}

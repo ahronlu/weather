@@ -1,6 +1,8 @@
+window,
 html,
 body {
   height: 100%;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .heart {
@@ -16,12 +18,17 @@ body {
 .app-inverse {
   background-color: black;
   color: rgba(255, 255, 255, 0.9);
-  height: 100vh;
+  min-height: 100vh;
 }
 
-.inverse,
-.inverse-search input {
+.inverse {
   background: #1b1c1d !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.inverse-search input,
+.inverse-search div {
+  background: gray !important;
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
@@ -30,6 +37,20 @@ span,
   margin: 25px;
 }
 
-.medium {
-  margin: 0 auto;
+.small {
+  margin: 20px auto;
+}
+
+.tiny {
+  margin-bottom: 5px;
+}
+
+.center.aligned.row {
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .ui.five.cards {
+    margin-top: 1rem;
+  }
 }

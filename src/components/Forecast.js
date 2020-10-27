@@ -19,7 +19,7 @@ const Forecast = () => {
   };
 
   const { days } = useSelector((state) => state.cityForecast);
-  const { darkMode, isCel } = useSelector((state) => state.theme);
+  const { darkMode, isFar } = useSelector((state) => state.theme);
 
   return (
     <Card.Group stackable itemsPerRow={5}>
@@ -32,16 +32,16 @@ const Forecast = () => {
             >
               <h3>{weekDayNumber(day.Date)}</h3>
               <h3>{day.Day.IconPhrase}</h3>
-              <Image src={`icons/${day.Day.Icon}-s.png`} />
-              <Image src={`icons/${day.Night.Icon}-s.png`} />
+              <Image size="tiny" src={`icons/${day.Day.Icon}.svg`} />
+              <Image size="tiny" src={`icons/${day.Night.Icon}.svg`} />
               <span>
-                {isCel
+                {!isFar
                   ? day.Temperature.Maximum.Value.toFixed(0)
                   : (day.Temperature.Maximum.Value * 1.8 + 32).toFixed(0)}
                 °
               </span>
               <span>
-                {isCel
+                {!isFar
                   ? day.Temperature.Minimum.Value.toFixed(0)
                   : (day.Temperature.Minimum.Value * 1.8 + 32).toFixed(0)}
                 °
