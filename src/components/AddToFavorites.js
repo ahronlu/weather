@@ -33,6 +33,7 @@ const AddToFavorites = () => {
       name={`heart${!isFav ? " outline" : ""}`}
       size="huge"
       color="red"
+      title="Add to favories"
     />
   );
 };

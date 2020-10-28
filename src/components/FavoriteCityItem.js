@@ -32,12 +32,18 @@ const FavoriteCityItem = ({ favCity, loadCity }) => {
       md={12}
       onClick={() => loadCity(favCity)}
       className={darkMode ? "inverse" : ""}
+      title={favCity.name}
     >
       {city.length ? (
         <Card.Content textAlign="center" className={darkMode ? "inverse" : ""}>
           <Card.Header className={darkMode ? "inverse" : ""}>
             {favCity.name}{" "}
-            <Icon color="red" name="trash" onClick={removeFavorite} />
+            <Icon
+              color="red"
+              name="trash"
+              onClick={removeFavorite}
+              title="Remove from favories"
+            />
           </Card.Header>
           <Image
             size="small"
