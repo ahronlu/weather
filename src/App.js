@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import Header from "./components/Header";
 import Favorites from "./pages/Favorites";
@@ -38,6 +43,7 @@ const App = () => {
         <Switch>
           <Route path={URLS.favorites} component={Favorites} />
           <Route exact path={URLS.home} component={Home} />
+          <Redirect to="/" />
         </Switch>
         <ToastContainer />
       </div>
