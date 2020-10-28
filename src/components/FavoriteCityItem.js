@@ -33,7 +33,7 @@ const FavoriteCityItem = ({ favCity, loadCity }) => {
       onClick={() => loadCity(favCity)}
       className={darkMode ? "inverse" : ""}
     >
-      {city.length && (
+      {city.length ? (
         <Card.Content textAlign="center" className={darkMode ? "inverse" : ""}>
           <Card.Header className={darkMode ? "inverse" : ""}>
             {favCity.name}{" "}
@@ -53,6 +53,8 @@ const FavoriteCityItem = ({ favCity, loadCity }) => {
             </span>
           </Card.Description>
         </Card.Content>
+      ) : (
+        ""
       )}
     </Card>
   );

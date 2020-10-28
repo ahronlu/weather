@@ -3,6 +3,7 @@ html,
 body {
   height: 100%;
   font-family: "Courier New", Courier, monospace;
+  background-color: #f2f3f5;
 }
 
 .heart {
@@ -28,7 +29,7 @@ body {
 
 .inverse-search input,
 .inverse-search div div {
-  background: gray !important;
+  background: #3a3b3c !important;
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
