@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Search, Label } from "semantic-ui-react";
-import { autocomplete } from "../services/services";
 import { toast } from "react-toastify";
+import { autocomplete } from "../services/services";
 import { getCityForecast } from "../actions/cityForecastActions";
 
 function Searchbar() {
   const dispatch = useDispatch();
+
   const [cityOptions, setCityOptions] = useState([]);
   const [value, setValue] = useState("");
   const [isLoading, setLoading] = useState(false);

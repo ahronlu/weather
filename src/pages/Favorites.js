@@ -1,8 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Card, Segment } from "semantic-ui-react";
-import { getCityForecast } from "../actions/cityForecastActions";
 import FavoriteCityItem from "../components/FavoriteCityItem";
+import { getCityForecast } from "../actions/cityForecastActions";
+import URLS from "../routes";
 
 const Favorites = ({ history }) => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const Favorites = ({ history }) => {
 
   const loadCity = (city) => {
     dispatch(getCityForecast(city.key, city.name));
-    history.push("/");
+    history.push(URLS.home);
   };
 
   return (

@@ -8,6 +8,7 @@ import {
 
 const AddToFavorites = () => {
   const dispatch = useDispatch();
+
   const [selectedCity, setSelectedCity] = useState({});
 
   const { name, key } = useSelector((state) => state.cityForecast);
