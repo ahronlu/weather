@@ -2,10 +2,10 @@
 
 Weather app build React + Redux
 
-![Home Light](images/home-light.png)
-![Favorites Light](images/home-dark.png)
-![Favorites Light](images/favorites-light.png)
-![Favorites Dark](images/favorites-dark.png)
+![Home Light](home-light.png)
+![Favorites Light](home-dark.png)
+![Favorites Light](favorites-light.png)
+![Favorites Dark](favorites-dark.png)
 
 ## Features
 
