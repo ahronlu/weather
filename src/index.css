@@ -6,6 +6,10 @@ body {
   background-color: #f2f3f5;
 }
 
+.ui {
+  transition: background-color 0.25s;
+}
+
 .heart {
   cursor: pointer;
 }

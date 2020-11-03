@@ -11,6 +11,7 @@ function Searchbar() {
   const [cityOptions, setCityOptions] = useState([]);
   const [value, setValue] = useState("");
   const [isLoading, setLoading] = useState(false);
+  const [timer, setTimer] = useState(undefined);
 
   const { darkMode } = useSelector((state) => state.theme);
 
@@ -31,7 +32,13 @@ function Searchbar() {
       }
       setLoading(false);
     };
-    if (value) getCities();
+    if (!value) return;
+    if (timer) {
+      clearTimeout(timer);
+      setTimer(undefined);
+    }
+    setTimer(setTimeout(getCities, 1000));
+    // eslint-disable-next-line
   }, [value]);
 
   const selectCity = (data) => {

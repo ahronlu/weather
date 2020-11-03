@@ -23,7 +23,6 @@ const App = () => {
     const getUserForecast = async () => {
       try {
         const data = await getCurrentLocation();
-        console.log(data);
         if (data) {
           dispatch(getCityForecast(data.Key, data.LocalizedName));
         } else {
