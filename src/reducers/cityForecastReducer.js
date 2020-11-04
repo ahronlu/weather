@@ -5,7 +5,7 @@ import {
 } from "../constants/cityForecastConstants";
 
 export const cityForecastReducer = (
-  state = { loading: true, days: [], name: "", key: "", currentCondition: [] },
+  state = { loading: false, days: [], name: "", key: "", currentCondition: [] },
   action
 ) => {
   switch (action.type) {
