@@ -58,7 +58,6 @@ const Header = () => {
       >
         <Icon name="favorite" />
       </Menu.Item>
-          </Menu.Item>
       <Menu.Item
         as="a"
         href="https://github.com/koftov"
