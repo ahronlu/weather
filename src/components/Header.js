@@ -61,6 +61,7 @@ const Header = () => {
       <Menu.Item
         as="a"
         href="https://github.com/koftov"
+        target="_blank"
         title="My Github"
       >
         <Icon name="github" />
