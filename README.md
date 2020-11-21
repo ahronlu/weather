@@ -1,6 +1,6 @@
 # Herolo Weather Task by Aharon Lubitsch
 
-Weather app build React + Redux
+Weather app build with React + Redux
 
 ![Home Light](home-light.png)
 ![Favorites Light](home-dark.png)
