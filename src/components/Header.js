@@ -32,9 +32,6 @@ const Header = () => {
 
   return (
     <Menu borderless inverted={darkMode}>
-      <Menu.Item as={Link} to={URLS.home} title="Home">
-        Herolo Weather
-      </Menu.Item>
       <Menu.Item onClick={toggleDarkLight} title="Dark/Light Mode">
         <Icon name={darkMode ? `sun` : `moon`} />
       </Menu.Item>
