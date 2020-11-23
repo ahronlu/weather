@@ -10,18 +10,6 @@ const Home = () => {
   const { name, loading, currentCondition, error } = useSelector(
     (state) => state.cityForecast
   );
-  const { darkMode, isFar } = useSelector((state) => state.theme);import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { Container, Grid, Segment, Image, GridRow } from "semantic-ui-react";
-import { toast } from "react-toastify";
-import AddToFavorites from "../components/AddToFavorites";
-import Searchbar from "../components/Searchbar";
-import Forecast from "../components/Forecast";
-
-const Home = () => {
-  const { name, loading, currentCondition, error } = useSelector(
-    (state) => state.cityForecast
-  );
   const { darkMode, isFar } = useSelector((state) => state.theme);
 
   useEffect(() => {
