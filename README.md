@@ -1,4 +1,4 @@
-# Herolo Weather Task by Aharon Lubitsch
+# Weather Task by Aharon Lubitsch
 
 Weather app build with React + Redux
 
